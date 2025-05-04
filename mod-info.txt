@@ -1,0 +1,5 @@
+[mod]
+title: Balance Warfare - 平衡战争
+description: 由 Teeworlds 开发者 甘箨Bamcane 自制的供群友游玩的铁锈平衡模组wq
+minVersion: v1.15p9
+tags:units,turrets
