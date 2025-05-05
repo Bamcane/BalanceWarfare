@@ -1,0 +1,120 @@
+[core]
+dont_load: true
+class: CustomUnitMetadata
+
+mass: 10000
+
+maxShield: 0
+shieldRenderRadius: 24
+shieldRegen: 0
+
+techLevel: 1
+
+radius: 16
+displayRadius: 16
+
+transportSlotsNeeded: 3
+
+[graphics]
+total_frames: 1
+
+image:        mobile_bunker_base.png
+image_wreak:  mobile_bunker_base_dead.png
+
+image_shadow: AUTO
+shadowOffsetX: 1
+shadowOffsetY: 2
+
+rotate_with_direction: false
+
+[leg_1]
+x: -15
+y: 15
+attach_x: -5
+attach_y: 5
+
+heightSpeed: 0.3
+moveSpeed: 3.4
+resetAngle: 20
+rotateSpeed: 7
+
+
+image_leg:  SHARED:leg.png
+image_foot: SHARED:foot.png
+
+holdDisMin: 20
+holdDisMax: 30
+
+holdDisMin_maxMovingLegs: 2
+
+[leg_2]
+x: 15
+y: 15
+attach_x: 5
+attach_y: 5
+copyFrom: 1
+
+[leg_3]
+x: -15
+y: -15
+attach_x: -5
+attach_y: -5
+copyFrom: 1
+
+[leg_4]
+x: 15
+y: -15
+attach_x: 5
+attach_y: -5
+copyFrom: 1
+
+[movement]
+movementType: OVER_CLIFF
+moveSpeed: 0.3
+moveAccelerationSpeed: 0.04
+moveDecelerationSpeed: 0.06
+
+reverseSpeedPercentage:1.0
+
+maxTurnSpeed: 0
+turnAcceleration: 0
+
+moveSlidingMode: false
+moveIgnoringBody: true
+
+[action_deploy]
+displayType: action
+isVisible: if not self.hasFlag(id=1)
+isActive: if not self.hasFlag(id=1)
+text: Deploy
+text_zh: 部署
+description: - Undeploy
+description_zh: - 取消部署
+price:  0
+buildSpeed: 20s
+whenBuilding_cannotMove: true
+whenBuilding_rotateTo: 0
+whenBuilding_rotateTo_orBackwards: true
+
+canPlayerCancel: false
+
+addResources: setFlag=1
+setUnitStats: shieldRegen=0.5, moveSpeed=0, mass=20000, maxShield=1000
+
+[action_undeploy]
+displayType: action
+isVisible: if self.hasFlag(id=1)
+isActive: if self.hasFlag(id=1)
+text: Undeploy
+text_zh: 取消部署
+description: - Undeploy
+description_zh: - 取消部署
+price:  0
+buildSpeed: 20s
+whenBuilding_cannotMove: true
+whenBuilding_rotateTo: 0
+whenBuilding_rotateTo_orBackwards: true
+addResources: unsetFlag=1
+resetUnitStats: true
+
+canPlayerCancel: false
