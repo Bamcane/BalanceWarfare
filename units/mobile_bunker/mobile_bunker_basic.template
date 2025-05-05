@@ -99,7 +99,7 @@ whenBuilding_rotateTo_orBackwards: true
 canPlayerCancel: false
 
 addResources: setFlag=1
-setUnitStats: shieldRegen=0.5, moveSpeed=0, mass=100000, maxShield=1000
+setUnitStats: shieldRegen=0.5, moveSpeed=0, mass=10000000000, maxShield=1000
 
 [action_undeploy]
 displayType: action
